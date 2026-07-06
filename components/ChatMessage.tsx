@@ -37,14 +37,15 @@ export function ChatMessage({ message, showModel = true }: ChatMessageProps) {
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 components={{
-                  code({ node, inline, className, children, ...props }) {
+                  code(props) {
+                    const { node, inline, className, children, ...rest } = props as any;
                     return inline ? (
-                      <code className={className} {...props}>
+                      <code className={className} {...rest}>
                         {children}
                       </code>
                     ) : (
                       <pre>
-                        <code className={className} {...props}>
+                        <code className={className} {...rest}>
                           {children}
                         </code>
                       </pre>
