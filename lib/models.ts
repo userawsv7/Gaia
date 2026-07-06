@@ -62,16 +62,16 @@ export type ModelCategory = typeof MODEL_CATEGORIES[number];
 
 // Fallback chain for different scenarios
 export const FALLBACK_CHAINS = {
-  primary: ['gpt-5.5', 'claude-opus-4.8', 'claude-sonnet-5', 'gemini-3.1-pro'],
+  primary: ['gemini-3.5-flash', 'gpt-5.5', 'gemini-3.1-pro', 'claude-sonnet-5'],
   reasoning: ['claude-opus-4.8', 'gpt-5.5', 'claude-opus-4.7', 'gemini-3.1-pro'],
   coding: ['claude-opus-4.6', 'gpt-5.4', 'claude-sonnet-5', 'deepseek-v4-pro'],
-  testing: ['claude-sonnet-5', 'gpt-5.4', 'deepseek-v3.2', 'claude-haiku-4.5'],
-  teaching: ['claude-sonnet-5', 'claude-sonnet-4.6', 'kimi-k2.5', 'minimax-m3'],
+  testing: ['gemini-3.5-flash', 'gpt-5.4', 'deepseek-v3.2', 'claude-sonnet-5'],
+  teaching: ['gemini-3.5-flash', 'kimi-k2.5', 'minimax-m3', 'claude-sonnet-4.6'],
   fast: ['claude-haiku-4.5', 'gemini-3.5-flash', 'deepseek-v4-flash', 'minimax-m2.5'],
   longContext: ['gemini-3.1-pro', 'gemini-3-flash', 'claude-opus-4.8', 'gpt-5.5'],
   multimodal: ['gemini-3-flash', 'mimo-v2.5-pro', 'gemini-3.1-pro', 'mimo-v2.5'],
-  api: ['deepseek-v3.2', 'claude-sonnet-5', 'gpt-5.4', 'deepseek-v4-flash'],
-  interview: ['kimi-k2.5', 'minimax-m3', 'claude-sonnet-5', 'claude-haiku-4.5'],
+  api: ['deepseek-v3.2', 'gemini-3.5-flash', 'gpt-5.4', 'deepseek-v4-flash'],
+  interview: ['kimi-k2.5', 'minimax-m3', 'gemini-3.5-flash', 'claude-haiku-4.5'],
 };
 
 // Model ranking by category

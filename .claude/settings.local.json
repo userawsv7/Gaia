@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run *)",
       "Read(//root/.nvm/versions/**)",
-      "Bash(command -v fnm volta)"
+      "Bash(command -v fnm volta)",
+      "Bash(git -C /home/laksh/projects/Gaia log --oneline -5)"
     ]
   }
 }
