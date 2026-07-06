@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run *)",
+      "Read(//root/.nvm/versions/**)",
+      "Bash(command -v fnm volta)"
+    ]
+  }
+}

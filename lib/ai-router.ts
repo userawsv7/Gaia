@@ -27,8 +27,8 @@ class AIRouter {
 
   constructor() {
     this.client = new OpenAI({
-      api_key: process.env.KODE_API_KEY || 'KODE_API_KEY',
-      base_url: 'https://api.ai.kodekloud.com/v1',
+      apiKey: process.env.KODE_API_KEY || 'KODE_API_KEY',
+      baseURL: 'https://api.ai.kodekloud.com/v1',
     });
 
     // Initialize available models set
