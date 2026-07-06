@@ -27,8 +27,8 @@ class AIRouter {
 
   constructor() {
     this.client = new OpenAI({
-      apiKey: process.env.KODE_API_KEY || 'KODE_API_KEY',
-      baseURL: 'https://api.ai.kodekloud.com/v1',
+      apiKey: process.env.GROQ_API_KEY || 'gsk_free_groq_key_here',
+      baseURL: 'https://api.groq.com/openai/v1',
     });
 
     // Initialize available models set
