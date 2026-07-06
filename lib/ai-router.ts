@@ -27,7 +27,7 @@ class AIRouter {
 
   constructor() {
     this.client = new OpenAI({
-      apiKey: process.env.GROQ_API_KEY || 'gsk_free_groq_key_here',
+      apiKey: process.env.GROQ_API_KEY || '',
       baseURL: 'https://api.groq.com/openai/v1',
     });
 
@@ -193,7 +193,7 @@ class AIRouter {
           model: modelId,
           messages: messages as any,
           temperature: options.temperature ?? 0.7,
-          max_tokens: options.maxTokens ?? 4096,
+          max_completion_tokens: options.maxTokens ?? 1024,
           stream: true,
         });
 

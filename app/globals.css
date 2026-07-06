@@ -51,3 +51,41 @@
 body {
   font-family: var(--font-geist-sans);
 }
+
+/* Coach-style UI enhancements */
+.coach-header {
+  background: linear-gradient(135deg, #1a365d 0%, #2b6cb0 100%);
+}
+
+.coach-input {
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.coach-input:focus {
+  border-color: #2b6cb0;
+  box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+}
+
+.suggestion-card {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.suggestion-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.message-bubble {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chat-container {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 20px 20px;
+}

@@ -215,20 +215,20 @@ export default function GaiaChat() {
       <Sidebar />
 
       <div className="flex-1 flex flex-col">
-        {/* Header */}
-        <div className="border-b border-border-color px-6 py-4 flex items-center justify-between">
+        {/* Header - Coach Style */}
+        <div className="coach-header px-6 py-4 flex items-center justify-between">
           <div>
-            <h2 className="text-lg font-semibold">
-              {currentConversation?.title || 'Welcome to GAIA'}
+            <h2 className="text-lg font-semibold text-white">
+              {currentConversation?.title || 'Training Session'}
             </h2>
-            <p className="text-sm text-text-muted">
-              AI-Powered Testing & Automation Assistant
+            <p className="text-sm text-white/80">
+              Seasoned Testing Coach • Direct • Actionable
             </p>
           </div>
           {currentModel && showModelInfo && (
             <div className="flex items-center gap-2">
-              <span className="text-sm text-text-muted">Using:</span>
-              <span className="model-badge">{currentModel}</span>
+              <span className="text-sm text-white/70">Coach:</span>
+              <span className="px-3 py-1 bg-white/20 rounded-full text-sm text-white font-medium">{currentModel}</span>
             </div>
           )}
         </div>
@@ -244,17 +244,17 @@ export default function GaiaChat() {
               <p className="text-lg text-text-secondary mb-8">
                 Your personal AI mentor for Software Testing & Test Automation excellence
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-lg">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 w-full max-w-lg">
                 {[
-                  "How do I set up a Playwright project?",
-                  "Explain the Page Object Model pattern",
-                  "Help me prepare for a QA interview",
-                  "What's the best testing framework for React?"
+                  "Start a Playwright project",
+                  "Explain POM pattern",
+                  "Prep for QA interview",
+                  "Best React testing tool?"
                 ].map((suggestion, index) => (
                   <button
                     key={index}
                     onClick={() => handleSendMessage(suggestion)}
-                    className="p-4 text-left rounded-xl border border-border-color hover:bg-bg-secondary transition-colors text-sm"
+                    className="suggestion-card p-3 text-left rounded-lg border border-border-color hover:bg-bg-secondary transition-all text-sm"
                   >
                     {suggestion}
                   </button>

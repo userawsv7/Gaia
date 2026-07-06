@@ -9,11 +9,9 @@ export interface AIModel {
 }
 
 export const MODELS: AIModel[] = [
-  // Groq Models
+  // Groq Models - Llama 3.3 70B as main coach
+  { id: 'llama-3.3-70b-versatile', name: 'Llama 3.3 70B Versatile', category: ['Coding', 'Reasoning', 'Teaching'], strengths: ['Code generation', 'Complex reasoning', 'Explanations'], contextLength: 128000, speed: 'medium', cost: 'low' },
   { id: 'llama-3.1-8b-instant', name: 'Llama 3.1 8B Instant', category: ['Fast Chat', 'General'], strengths: ['Quick responses', 'Speed'], contextLength: 128000, speed: 'fast', cost: 'low' },
-  { id: 'llama-3.3-70b-versatile', name: 'Llama 3.3 70B Versatile', category: ['Coding', 'Reasoning'], strengths: ['Code generation', 'Complex reasoning'], contextLength: 128000, speed: 'medium', cost: 'low' },
-  { id: 'llama-3.1-70b-versatile', name: 'Llama 3.1 70B Versatile', category: ['Coding', 'General'], strengths: ['Technical explanations', 'Problem solving'], contextLength: 128000, speed: 'medium', cost: 'low' },
-  { id: 'mixtral-8x7b-32768', name: 'Mixtral 8x7B', category: ['Teaching', 'General'], strengths: ['Explanations', 'Structured learning'], contextLength: 32768, speed: 'medium', cost: 'low' },
   { id: 'gemma2-9b-it', name: 'Gemma 2 9B', category: ['Fast Chat', 'General'], strengths: ['Quick responses', 'Conversational'], contextLength: 8192, speed: 'fast', cost: 'low' },
 ];
 
@@ -24,18 +22,18 @@ export const MODEL_CATEGORIES = [
 
 export type ModelCategory = typeof MODEL_CATEGORIES[number];
 
-// Fallback chain for different scenarios
+// Fallback chain for different scenarios - using available Groq models
 export const FALLBACK_CHAINS = {
-  primary: ['llama-3.1-8b-instant', 'llama-3.3-70b-versatile', 'mixtral-8x7b-32768'],
-  reasoning: ['llama-3.3-70b-versatile', 'llama-3.1-70b-versatile', 'mixtral-8x7b-32768'],
-  coding: ['llama-3.3-70b-versatile', 'llama-3.1-70b-versatile', 'mixtral-8x7b-32768'],
-  testing: ['llama-3.1-8b-instant', 'llama-3.3-70b-versatile', 'llama-3.1-70b-versatile'],
-  teaching: ['mixtral-8x7b-32768', 'llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
-  fast: ['llama-3.1-8b-instant', 'gemma2-9b-it', 'llama-3.3-70b-versatile'],
-  longContext: ['llama-3.1-70b-versatile', 'llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
-  multimodal: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
-  api: ['llama-3.1-8b-instant', 'llama-3.3-70b-versatile', 'llama-3.1-70b-versatile'],
-  interview: ['llama-3.3-70b-versatile', 'mixtral-8x7b-32768', 'llama-3.1-8b-instant'],
+  primary: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant', 'gemma2-9b-it'],
+  reasoning: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  coding: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  testing: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  teaching: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  fast: ['llama-3.1-8b-instant', 'gemma2-9b-it'],
+  longContext: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  multimodal: ['llama-3.3-70b-versatile'],
+  api: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
+  interview: ['llama-3.3-70b-versatile', 'llama-3.1-8b-instant'],
 };
 
 // Model ranking by category

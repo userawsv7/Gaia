@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     // Start async streaming
     (async () => {
       try {
-        for await (const chunk of aiRouter.streamChat(messages, {
+        for await (const chunk of aiRouter.streamChat(messagesWithSystem as any, {
           requestType,
           temperature,
           maxTokens,
